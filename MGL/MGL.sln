@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MGL", "MGL.vcxproj", "{475A3869-2C81-4B4D-86AB-A3D12FD4AB98}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glew_static", "..\external\glew-2.1.0\build\vc12\glew_static.vcxproj", "{664E6F0D-6784-4760-9565-D54F8EB1EDF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{475A3869-2C81-4B4D-86AB-A3D12FD4AB98}.Release|x64.Build.0 = Release|x64
 		{475A3869-2C81-4B4D-86AB-A3D12FD4AB98}.Release|x86.ActiveCfg = Release|Win32
 		{475A3869-2C81-4B4D-86AB-A3D12FD4AB98}.Release|x86.Build.0 = Release|Win32
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Debug|x64.ActiveCfg = Debug|x64
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Debug|x64.Build.0 = Debug|x64
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Debug|x86.ActiveCfg = Debug|Win32
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Debug|x86.Build.0 = Debug|Win32
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Release|x64.ActiveCfg = Release|x64
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Release|x64.Build.0 = Release|x64
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Release|x86.ActiveCfg = Release|Win32
+		{664E6F0D-6784-4760-9565-D54F8EB1EDF4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
