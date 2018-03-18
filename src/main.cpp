@@ -1,9 +1,8 @@
-#include <GLFW/glfw3.h>
-
 #include <iostream>
-#include <memory>
 
 #include "MGLContextManager.h"
+#include "MGLShader.h"
+#include "MGLShaderProgram.h"
 
 int main(char*, char**) {
 	
@@ -17,8 +16,17 @@ int main(char*, char**) {
 		return -1;
 	}
 
-	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-	glViewport(0, 0, 800, 600);
+	MGLShader vert(ShaderType::Vertex);
+	MGLShader fragment(ShaderType::Fragment);
+
+	MGLShaderProgram program;
+
+	program.attach(vert);
+	program.attach(fragment);
+	program.link();
+
+	
+
 
 	rendererContext.run();
 

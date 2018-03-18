@@ -79,10 +79,12 @@ void MGLContextManager::init(int width, int height, std::string winTitle) {
 		glDebugMessageCallback((GLDEBUGPROC)MessageCallback, 0); // should check if this exists in context first
 		std::cout << "Debug Context enabled" << std::endl;
 	}
+
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // some default values
+	glViewport(0, 0, width, height);
 }
 
 void MGLContextManager::run() {
-
 	while (!glfwWindowShouldClose(m_window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);

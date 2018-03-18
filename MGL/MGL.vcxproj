@@ -141,9 +141,15 @@
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\MGLContextManager.cpp" />
+    <ClCompile Include="..\src\MGLShader.cpp" />
+    <ClCompile Include="..\src\MGLShaderProgram.cpp" />
+    <ClCompile Include="..\src\ShaderType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\MGLContextManager.h" />
+    <ClInclude Include="..\src\MGLShader.h" />
+    <ClInclude Include="..\src\MGLShaderProgram.h" />
+    <ClInclude Include="..\src\ShaderType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
