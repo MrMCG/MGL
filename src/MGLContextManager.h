@@ -9,7 +9,7 @@ public:
 	~MGLContextManager();
 
 	void init();
-	void init(int width, int height, std::string winTitle);
+	void init(int width, int height, std::string const& winTitle);
 
 	void run();
 

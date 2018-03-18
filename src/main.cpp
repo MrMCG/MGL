@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <GL/glew.h>
+
 #include "MGLContextManager.h"
 #include "MGLShader.h"
 #include "MGLShaderProgram.h"
@@ -24,9 +26,6 @@ int main(char*, char**) {
 	program.attach(vert);
 	program.attach(fragment);
 	program.link();
-
-	
-
 
 	rendererContext.run();
 

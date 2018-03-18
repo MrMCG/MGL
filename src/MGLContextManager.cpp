@@ -49,7 +49,7 @@ void MGLContextManager::init() {
 	init(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_WIN_TITLE);
 }
 
-void MGLContextManager::init(int width, int height, std::string winTitle) {
+void MGLContextManager::init(int width, int height, std::string const& winTitle) {
 	if (m_window != nullptr) {
 		std::cout << "Context already initialised!" << std::endl;
 		return;
@@ -88,6 +88,7 @@ void MGLContextManager::run() {
 	while (!glfwWindowShouldClose(m_window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
+
 		glfwSwapBuffers(m_window);
 		glfwPollEvents();
 	}
