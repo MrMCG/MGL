@@ -150,22 +150,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\buffers\MGLVaoBuffer.cpp" />
-    <ClCompile Include="..\src\buffers\MGLVboBuffer.cpp" />
-    <ClCompile Include="..\src\buffers\MGLVertexBuffer.cpp" />
+    <ClCompile Include="..\src\buffers\VaoBuffer.cpp" />
+    <ClCompile Include="..\src\buffers\VboBuffer.cpp" />
+    <ClCompile Include="..\src\buffers\VertexBuffer.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\MGLContextManager.cpp" />
-    <ClCompile Include="..\src\shaders\MGLShader.cpp" />
-    <ClCompile Include="..\src\shaders\MGLShaderProgram.cpp" />
+    <ClCompile Include="..\src\ContextManager.cpp" />
+    <ClCompile Include="..\src\GameObject.cpp" />
+    <ClCompile Include="..\src\Scene.cpp" />
+    <ClCompile Include="..\src\shaders\Shader.cpp" />
+    <ClCompile Include="..\src\shaders\ShaderProgram.cpp" />
     <ClCompile Include="..\src\shaders\ShaderType.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\buffers\MGLVaoBuffer.h" />
-    <ClInclude Include="..\src\buffers\MGLVboBuffer.h" />
-    <ClInclude Include="..\src\buffers\MGLVertexBuffer.h" />
-    <ClInclude Include="..\src\MGLContextManager.h" />
-    <ClInclude Include="..\src\shaders\MGLShader.h" />
-    <ClInclude Include="..\src\shaders\MGLShaderProgram.h" />
+    <ClInclude Include="..\src\buffers\VaoBuffer.h" />
+    <ClInclude Include="..\src\buffers\VboBuffer.h" />
+    <ClInclude Include="..\src\buffers\VertexBuffer.h" />
+    <ClInclude Include="..\src\ContextManager.h" />
+    <ClInclude Include="..\src\GameObject.h" />
+    <ClInclude Include="..\src\Scene.h" />
+    <ClInclude Include="..\src\shaders\Shader.h" />
+    <ClInclude Include="..\src\shaders\ShaderProgram.h" />
     <ClInclude Include="..\src\shaders\ShaderType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

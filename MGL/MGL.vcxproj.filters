@@ -30,49 +30,61 @@
     <ClCompile Include="..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\MGLContextManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\buffers\MGLVaoBuffer.cpp">
-      <Filter>Source Files\buffers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\buffers\MGLVboBuffer.cpp">
-      <Filter>Source Files\buffers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\buffers\MGLVertexBuffer.cpp">
-      <Filter>Source Files\buffers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\shaders\MGLShader.cpp">
-      <Filter>Source Files\shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\shaders\MGLShaderProgram.cpp">
-      <Filter>Source Files\shaders</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\shaders\ShaderType.cpp">
       <Filter>Source Files\shaders</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ContextManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaders\ShaderProgram.cpp">
+      <Filter>Source Files\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaders\Shader.cpp">
+      <Filter>Source Files\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\buffers\VaoBuffer.cpp">
+      <Filter>Source Files\buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\buffers\VboBuffer.cpp">
+      <Filter>Source Files\buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\buffers\VertexBuffer.cpp">
+      <Filter>Source Files\buffers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\MGLContextManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\buffers\MGLVaoBuffer.h">
-      <Filter>Header Files\buffers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\buffers\MGLVboBuffer.h">
-      <Filter>Header Files\buffers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\buffers\MGLVertexBuffer.h">
-      <Filter>Header Files\buffers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\shaders\MGLShader.h">
-      <Filter>Header Files\shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\shaders\MGLShaderProgram.h">
-      <Filter>Header Files\shaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\shaders\ShaderType.h">
       <Filter>Header Files\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ContextManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shaders\ShaderProgram.h">
+      <Filter>Header Files\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shaders\Shader.h">
+      <Filter>Header Files\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\buffers\VaoBuffer.h">
+      <Filter>Header Files\buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\buffers\VboBuffer.h">
+      <Filter>Header Files\buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\buffers\VertexBuffer.h">
+      <Filter>Header Files\buffers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

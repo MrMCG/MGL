@@ -2,13 +2,12 @@
 
 #include <GL/glew.h>
 
-#include "MGLContextManager.h"
-#include "MGLShader.h"
-#include "MGLShaderProgram.h"
+#include "ContextManager.h"
+#include "Scene.h"
 
 int main(char*, char**) {
 	
-	MGLContextManager rendererContext{};
+	MGL::ContextManager rendererContext{};
 
 	try {
 		rendererContext.init();
@@ -18,14 +17,10 @@ int main(char*, char**) {
 		return -1;
 	}
 
-	MGLShader vert(ShaderType::Vertex);
-	MGLShader fragment(ShaderType::Fragment);
+	auto scene = std::make_shared<MGL::Scene>();
+	scene->load();
 
-	MGLShaderProgram program;
-
-	program.attach(vert);
-	program.attach(fragment);
-	program.link();
+	rendererContext.attaachScene(scene);
 
 	rendererContext.run();
 
