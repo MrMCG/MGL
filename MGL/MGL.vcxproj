@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\buffers\ColourBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VaoBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VboBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VertexBuffer.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="..\src\shaders\ShaderType.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\buffers\ColourBuffer.h" />
     <ClInclude Include="..\src\buffers\VaoBuffer.h" />
     <ClInclude Include="..\src\buffers\VboBuffer.h" />
     <ClInclude Include="..\src\buffers\VertexBuffer.h" />

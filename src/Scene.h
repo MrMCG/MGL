@@ -4,6 +4,7 @@ namespace MGL {
 
 	class VaoBuffer;
 	class VertexBuffer;
+	class ColourBuffer;
 	class ShaderProgram;
 
 	class Scene {
@@ -18,5 +19,6 @@ namespace MGL {
 		ShaderProgram * m_program;
 		VaoBuffer* m_vao;
 		VertexBuffer* m_vertex;
+		ColourBuffer* m_colour;
 	};
 } // MGL

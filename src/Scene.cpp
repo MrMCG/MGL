@@ -4,6 +4,7 @@
 #include "ShaderProgram.h"
 #include "VaoBuffer.h"
 #include "VertexBuffer.h"
+#include "ColourBuffer.h"
 
 #include <GL/glew.h>
 
@@ -29,8 +30,10 @@ namespace MGL {
 
 		m_vao = new VaoBuffer();
 		m_vertex = new VertexBuffer{ *m_vao };
+		m_colour = new ColourBuffer{ *m_vao };
 
 		m_vertex->bufferData();
+		m_colour->bufferData();
 	}
 
 	void Scene::draw() {

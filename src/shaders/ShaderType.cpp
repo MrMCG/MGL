@@ -6,11 +6,11 @@
 #include <string>
 
 namespace {
-	auto constexpr MGL_VERTEX_SHADER_VAL   = GL_VERTEX_SHADER;
-	auto constexpr MGL_FRAGMENT_SHADER_VAL = GL_FRAGMENT_SHADER;
+	auto constexpr VERTEX_SHADER_VAL   = GL_VERTEX_SHADER;
+	auto constexpr FRAGMENT_SHADER_VAL = GL_FRAGMENT_SHADER;
 
-	auto constexpr MGL_VERTEX_SHADER_STR = "VERTEX";
-	auto constexpr MGL_FRAGMENT_SHADER_STR = "FRAGMENT";
+	auto constexpr VERTEX_SHADER_STR = "VERTEX";
+	auto constexpr FRAGMENT_SHADER_STR = "FRAGMENT";
 }
 
 namespace MGL {
@@ -18,10 +18,10 @@ namespace MGL {
 	unsigned int to_uint(ShaderType shaderType) {
 		switch (shaderType) {
 		case ShaderType::Vertex:
-			return MGL_VERTEX_SHADER_VAL;
+			return VERTEX_SHADER_VAL;
 			break;
 		case ShaderType::Fragment:
-			return MGL_FRAGMENT_SHADER_VAL;
+			return FRAGMENT_SHADER_VAL;
 			break;
 		default:
 			throw std::exception("Invalid ShaderType given!");
@@ -32,10 +32,10 @@ namespace MGL {
 	std::ostream & operator<<(std::ostream & os, ShaderType shaderType) {
 		switch (shaderType) {
 		case ShaderType::Vertex:
-			os << MGL_VERTEX_SHADER_STR;
+			os << VERTEX_SHADER_STR;
 			break;
 		case ShaderType::Fragment:
-			os << MGL_FRAGMENT_SHADER_STR;
+			os << FRAGMENT_SHADER_STR;
 			break;
 		default:
 			os << "INVALID";
