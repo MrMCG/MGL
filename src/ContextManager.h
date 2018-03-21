@@ -1,7 +1,8 @@
 #pragma once
 
-#include <string>
 #include <memory>
+
+#include "Window.h"
 
 struct GLFWwindow;
 
@@ -11,28 +12,15 @@ namespace MGL {
 
 	class ContextManager {
 	public:
-		ContextManager();
-		~ContextManager();
-
-		void init();
-		void init(int width, int height, std::string const& winTitle);
+		ContextManager(std::unique_ptr<Window> window);
 
 		void run();
 
 		void attaachScene(std::shared_ptr<Scene> scene);
 
-		ContextManager(ContextManager && rhs); // move constructor
-		ContextManager & operator=(ContextManager && rhs); // move assignment
-
-		ContextManager(ContextManager const& rhs) = delete; // NO copy constructor
-		ContextManager & operator=(ContextManager const& rhs) = delete; // NO copy assignment
-
 	private:
-		GLFWwindow * m_window = nullptr;
+		std::unique_ptr<Window> m_window;
 		std::shared_ptr<Scene> m_scene;
-
-		void cleanup();
-		void setWindowHints();
 	};
 
 } // MGL

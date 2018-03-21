@@ -7,10 +7,11 @@
 
 int main(char*, char**) {
 	
-	MGL::ContextManager rendererContext{};
+	auto renderer = std::unique_ptr<MGL::ContextManager>();
 
 	try {
-		rendererContext.init();
+
+		renderer = std::make_unique<MGL::ContextManager>(std::make_unique<MGL::Window>());
 	}
 	catch (std::exception const& e) {
 		std::cout << "Failed to init window manager! : " << e.what() << std::endl;
@@ -20,9 +21,9 @@ int main(char*, char**) {
 	auto scene = std::make_shared<MGL::Scene>();
 	scene->load();
 
-	rendererContext.attaachScene(scene);
+	renderer->attaachScene(scene);
 
-	rendererContext.run();
+	renderer->run();
 
 	return 0;
 }
