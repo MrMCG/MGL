@@ -2,16 +2,16 @@
 
 #include <GL/glew.h>
 
-#include "ContextManager.h"
+#include "Renderer.h"
 #include "Scene.h"
 
 int main(char*, char**) {
 	
-	auto renderer = std::unique_ptr<MGL::ContextManager>();
+	auto renderer = std::unique_ptr<MGL::Renderer>();
 
 	try {
 
-		renderer = std::make_unique<MGL::ContextManager>(std::make_unique<MGL::Window>());
+		renderer = std::make_unique<MGL::Renderer>(std::make_unique<MGL::Window>());
 	}
 	catch (std::exception const& e) {
 		std::cout << "Failed to init window manager! : " << e.what() << std::endl;
@@ -19,9 +19,12 @@ int main(char*, char**) {
 	}
 
 	auto scene = std::make_shared<MGL::Scene>();
+
+
+
 	scene->load();
 
-	renderer->attaachScene(scene);
+	renderer->attachScene(scene);
 
 	renderer->run();
 

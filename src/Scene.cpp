@@ -34,14 +34,16 @@ namespace MGL {
 
 		m_vertex->bufferData();
 		m_colour->bufferData();
+
+		m_loaded = true;
 	}
 
 	void Scene::draw() {
-
-		m_program->use();
-		m_vao->bind();
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-
+		if (m_loaded) {
+			m_program->use();
+			m_vao->bind();
+			glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		}
 	}
 
 }

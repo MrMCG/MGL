@@ -20,5 +20,7 @@ namespace MGL {
 		VaoBuffer* m_vao;
 		VertexBuffer* m_vertex;
 		ColourBuffer* m_colour;
+
+		bool m_loaded = false;
 	};
 } // MGL
