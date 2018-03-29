@@ -5,6 +5,8 @@
 #include <exception>
 #include <iostream>
 
+#include "Logger.h"
+
 namespace {
 	auto constexpr MAJOR_VERSION = 4;
 	auto constexpr MINOR_VERSION = 4;
@@ -30,12 +32,14 @@ namespace MGL {
 	Window::Window() : Window(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_WIN_TITLE) {}
 
 	Window::Window(int width, int height, std::string const& winTitle) {
+		LOGD("GLFW init");
 		if (glfwInit() != GLFW_TRUE) {
 			throw std::runtime_error("Failed to init GLFW!");
 		}
 
 		setWindowHints();
 
+		LOGD("creating window: " << width << "x" << height << " " << winTitle);
 		m_window = glfwCreateWindow(800, 600, winTitle.c_str(), nullptr, nullptr);
 
 		if (m_window == nullptr) {
@@ -53,16 +57,19 @@ namespace MGL {
 	}
 
 	void Window::setWindowed(int width, int height, int refreshRate) const {
+		LOGD("Setting windowed");
 		glfwSetWindowMonitor(m_window, nullptr, DEFAULT_XPOS, DEFAULT_YPOS, width, height, refreshRate);
 		glViewport(0, 0, width, height);
 	}
 
 	void Window::setFullscreen(int width, int height, int refreshRate) const {
+		LOGD("Setting fullscreen");
 		glfwSetWindowMonitor(m_window, m_monitor, 0, 0, width, height, refreshRate);
 		glViewport(0, 0, width, height);
 	}
 
 	void Window::setBorderlessFullscreen() const {
+		LOGD("Setting borderless fullscreen");
 		GLFWvidmode const* mode = glfwGetVideoMode(m_monitor);
 		glfwSetWindowMonitor(m_window, nullptr, 0, 0, mode->width, mode->height, mode->refreshRate);
 		glViewport(0, 0, mode->width, mode->height);
@@ -121,6 +128,7 @@ namespace MGL {
 	}
 
 	void Window::setWindowHints() {
+		LOGD("Setting window hints");
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, MAJOR_VERSION);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, MINOR_VERSION);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -128,6 +136,7 @@ namespace MGL {
 		glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
 		if (ENABLE_DEBUG) {
+			LOGD("Setting openGL debug context");
 			glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 		}
 	}

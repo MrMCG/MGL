@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+#include "Logger.h"
+
 namespace {
 
 	auto constexpr INFO_LOG_SIZE = 512;
@@ -14,9 +16,11 @@ namespace MGL {
 
 	ShaderProgram::ShaderProgram() {
 		m_program = glCreateProgram();
+		LOGD("Creating program : " << m_program);
 	}
 
 	void ShaderProgram::link() {
+		LOGD("Linking program : " << m_program);
 		glLinkProgram(m_program);
 
 		auto success = -1;
@@ -26,11 +30,15 @@ namespace MGL {
 
 		if (!success) {
 			glGetProgramInfoLog(m_program, INFO_LOG_SIZE, nullptr, infoLog);
-			std::cout << "Error: program linking failed: " << infoLog << std::endl;
+			LOGE("Program linking failed: " << infoLog);
+			return;
 		}
+
+		LOGD("Link succes : " << m_program);
 	}
 
 	void ShaderProgram::attach(Shader const& mglShader) {
+		LOGD("Attaching shader : " << mglShader.getShaderVal() << " to program : " << m_program);
 		glAttachShader(m_program, mglShader.getShaderVal());
 	}
 

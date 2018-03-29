@@ -7,6 +7,7 @@
 #include <iostream>
 
 #include "Scene.h"
+#include "Logger.h"
 
 namespace {
 
@@ -33,6 +34,7 @@ namespace {
 namespace MGL {
 
 	Renderer::Renderer(std::unique_ptr<Window> window) : m_window(std::move(window)){
+		LOGD("GLEW init");
 		if (glewInit() != GLEW_OK) {
 			throw std::runtime_error("Failed to init GLEW!");
 		}
@@ -41,7 +43,7 @@ namespace MGL {
 			glEnable(GL_DEBUG_OUTPUT);
 			glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
 			glDebugMessageCallback((GLDEBUGPROC)MessageCallback, 0); // should check if this exists in context first
-			std::cout << "Debug Context enabled" << std::endl;
+			LOGD("Debug Context enabled");
 		}
 	}
 
@@ -62,6 +64,7 @@ namespace MGL {
 	}
 
 	void Renderer::attachScene(std::shared_ptr<Scene> scene) {
+		LOGD("Attaching new scene");
 		m_scene = scene;
 	}
 

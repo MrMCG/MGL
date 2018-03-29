@@ -20,13 +20,12 @@ int main(char*, char**) {
 
 	auto scene = std::make_shared<MGL::Scene>();
 
-
-
 	scene->load();
 
 	renderer->attachScene(scene);
 
 	renderer->run();
+
 
 	return 0;
 }

@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+#include "Logger.h"
+
 namespace {
 
 	auto constexpr INFO_LOG_SIZE = 512;
@@ -37,11 +39,14 @@ namespace {
 namespace MGL {
 
 	Shader::Shader(ShaderType shaderType) : Shader(determineShdaerDefault(shaderType), shaderType) {
-		std::cout << "Loading default shader: " << shaderType << std::endl;
+		LOGI( "Using default shader: " << shaderType );
 	}
 
 	Shader::Shader(std::string const& shaderSrc, ShaderType shaderType) : m_shaderType(shaderType) {
 		m_shaderVal = glCreateShader(to_uint(shaderType));
+
+		LOGD("Creating shader ( " << m_shaderType << " ) : " << m_shaderVal << " src: \n" << shaderSrc);
+
 		auto c_str = shaderSrc.c_str();
 		glShaderSource(m_shaderVal, 1, &c_str, nullptr);
 		compile();
@@ -52,6 +57,7 @@ namespace MGL {
 	}
 
 	void Shader::compile() {
+		LOGD("Compiling ( " << m_shaderType << " ) : " << m_shaderVal);
 		glCompileShader(m_shaderVal);
 
 		auto success{ -1 };
@@ -61,9 +67,11 @@ namespace MGL {
 
 		if (!success) {
 			glGetShaderInfoLog(m_shaderVal, INFO_LOG_SIZE, nullptr, infoLog);
-			std::cout << "Error: shader compilation failed: " << infoLog << std::endl;
+			LOGE( "Shader compilation failed: " << infoLog );
+			return;
 		}
 
+		LOGD("Compilation success ( " << m_shaderType << " ) : " << m_shaderVal);
 	}
 
 	std::string const Shader::determineShdaerDefault(ShaderType shaderType) {
