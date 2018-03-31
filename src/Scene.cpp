@@ -1,12 +1,13 @@
-#include "Scene.h"
+#include <GL/glew.h>
 
+#include "Scene.h"
 #include "Shader.h"
 #include "ShaderProgram.h"
 #include "VaoBuffer.h"
 #include "VertexBuffer.h"
 #include "ColourBuffer.h"
-
-#include <GL/glew.h>
+#include "Logger.h"
+#include "Input.h"
 
 namespace MGL {
 
@@ -16,6 +17,10 @@ namespace MGL {
 
 	Scene::~Scene() {
 
+	}
+
+	void Scene::setInput(std::shared_ptr<Input> input) {
+		m_input = input;
 	}
 
 	void Scene::load() {
@@ -35,15 +40,18 @@ namespace MGL {
 		m_vertex->bufferData();
 		m_colour->bufferData();
 
-		m_loaded = true;
+	}
+
+	void Scene::update() {
+		if (m_input->isPressed('S')) {
+			LOGI("hello from scene!");
+		}
 	}
 
 	void Scene::draw() {
-		if (m_loaded) {
-			m_program->use();
-			m_vao->bind();
-			glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-		}
+		m_program->use();
+		m_vao->bind();
+		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	}
 
 }

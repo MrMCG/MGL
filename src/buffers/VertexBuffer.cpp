@@ -1,5 +1,6 @@
-#include "VertexBuffer.h"
 #include <GL/glew.h>
+
+#include "VertexBuffer.h"
 
 namespace MGL {
 

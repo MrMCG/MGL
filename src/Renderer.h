@@ -4,8 +4,6 @@
 
 #include "Window.h"
 
-struct GLFWwindow;
-
 namespace MGL {
 
 	class Scene;

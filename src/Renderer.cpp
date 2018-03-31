@@ -1,11 +1,9 @@
-#include "Renderer.h"
-
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
 #include <exception>
 #include <iostream>
 
+#include "Renderer.h"
 #include "Scene.h"
 #include "Logger.h"
 
@@ -25,16 +23,19 @@ namespace {
 		const GLchar* message,
 		const void* userParam)
 	{
-		fprintf(stderr, "GL CALLBACK: %s type = 0x%x, severity = 0x%x, message = %s\n",
-			(type == GL_DEBUG_TYPE_ERROR ? "** GL ERROR **" : ""),
-			type, severity, message);
+		if (type == GL_DEBUG_TYPE_ERROR) {
+			LOGE("GL CALLBACK severity = " << severity << " message = " << message);
+		}
+		else {
+			LOGD("GL CALLBACK severity = " << severity << " message = " << message);
+		}
 	}
 }
 
 namespace MGL {
 
 	Renderer::Renderer(std::unique_ptr<Window> window) : m_window(std::move(window)){
-		LOGD("GLEW init");
+		LOGI("GLEW init");
 		if (glewInit() != GLEW_OK) {
 			throw std::runtime_error("Failed to init GLEW!");
 		}
@@ -48,6 +49,7 @@ namespace MGL {
 	}
 
 	void Renderer::run() const {
+		LOGI("Running render loop");
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // some default values
 		glViewport(0, 0, 800, 600);
 
@@ -55,17 +57,21 @@ namespace MGL {
 		{
 			glClear(GL_COLOR_BUFFER_BIT);
 		
-			if (m_scene)
-				m_scene->draw();
+			m_scene->update();
+			m_scene->draw();
 
 			m_window->swapBuffers();
-			glfwPollEvents();
+			m_window->pollEvents();
 		}
 	}
 
 	void Renderer::attachScene(std::shared_ptr<Scene> scene) {
 		LOGD("Attaching new scene");
+		if (scene == nullptr)
+			throw std::runtime_error("can not attach null scene");
+
 		m_scene = scene;
+		m_scene->setInput(m_window->getInput());
 	}
 
 } // MGL

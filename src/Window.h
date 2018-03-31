@@ -1,12 +1,14 @@
-#include <string>
+#pragma once
 
+#include <string>
+#include <memory>
 
 struct GLFWwindow;
 struct GLFWmonitor;
 
 namespace MGL {
 
-	class Scene;
+	class Input;
 
 	class Window {
 	public:
@@ -20,10 +22,17 @@ namespace MGL {
 
 		bool shouldClose() const;
 		void swapBuffers() const;
+		void pollEvents() const;
+
+		void updateInput(char key, int state);
+
+		std::shared_ptr<Input> getInput() { return m_input; };
 
 	private:
 		GLFWwindow *  m_window  = nullptr;
 		GLFWmonitor * m_monitor = nullptr;
+
+		std::shared_ptr<Input> m_input = std::make_shared<Input>();
 
 		void setWindowHints();
 	};

@@ -1,10 +1,9 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 
 #include "ShaderType.h"
-
-#include <iostream>
 
 namespace MGL {
 

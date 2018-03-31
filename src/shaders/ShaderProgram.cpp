@@ -1,9 +1,7 @@
-#include "ShaderProgram.h"
-
 #include <GL/glew.h>
-
 #include <iostream>
 
+#include "ShaderProgram.h"
 #include "Logger.h"
 
 namespace {

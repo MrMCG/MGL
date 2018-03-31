@@ -1,5 +1,6 @@
-#include "VaoBuffer.h"
 #include <GL/glew.h>
+
+#include "VaoBuffer.h"
 
 namespace MGL {
 

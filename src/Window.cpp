@@ -1,11 +1,10 @@
-#include "Window.h"
-
 #include <GLFW/glfw3.h>
-
 #include <exception>
 #include <iostream>
 
+#include "Window.h"
 #include "Logger.h"
+#include "Input.h"
 
 namespace {
 	auto constexpr MAJOR_VERSION = 4;
@@ -25,6 +24,12 @@ namespace {
 	auto constexpr ENABLE_DEBUG{ false };
 #endif
 
+	void keyCallback(GLFWwindow* window, int key, int scanCode, int action, int mode) {
+		auto* me = static_cast<MGL::Window*>(glfwGetWindowUserPointer(window));
+		LOGD("key press: " << static_cast<char>(key) << " action: " << action);
+		me->updateInput(static_cast<char>(key), action);
+	}
+
 }
 
 namespace MGL {
@@ -32,14 +37,14 @@ namespace MGL {
 	Window::Window() : Window(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_WIN_TITLE) {}
 
 	Window::Window(int width, int height, std::string const& winTitle) {
-		LOGD("GLFW init");
+		LOGI("GLFW init");
 		if (glfwInit() != GLFW_TRUE) {
 			throw std::runtime_error("Failed to init GLFW!");
 		}
 
 		setWindowHints();
 
-		LOGD("creating window: " << width << "x" << height << " " << winTitle);
+		LOGI("creating window: " << width << "x" << height << " " << winTitle);
 		m_window = glfwCreateWindow(800, 600, winTitle.c_str(), nullptr, nullptr);
 
 		if (m_window == nullptr) {
@@ -49,6 +54,9 @@ namespace MGL {
 		m_monitor = glfwGetPrimaryMonitor();
 			
 		glfwMakeContextCurrent(m_window);
+		glfwSetWindowUserPointer(m_window, this);
+
+		glfwSetKeyCallback(m_window, keyCallback);
 	}
 
 	Window::~Window() {
@@ -82,48 +90,16 @@ namespace MGL {
 		return glfwWindowShouldClose(m_window);
 	}
 
+	void Window::updateInput(char key, int action) {
+		m_input->addSate(key, action);
+	}
 
+	void Window::pollEvents() const {
+		m_input->clear();
+		glfwPollEvents();
+	}
 
 	void Window::swapBuffers() const {
-
-		static auto state1 = false;
-		static auto state2 = false;
-		static auto state3 = false;
-
-		if (glfwGetKey(m_window, GLFW_KEY_K) == GLFW_PRESS) {
-			if (state1 == false) {
-				std::cout << "bigger" << std::endl;
-				setWindowed(600, 400, 60);
-			}
-			state1 = true;		
-		}
-		else {
-			state1 = false;
-		}
-
-		if (glfwGetKey(m_window, GLFW_KEY_L) == GLFW_PRESS) {
-			if (state2 == false) {
-				std::cout << "smaller" << std::endl;
-				setFullscreen(1000, 800, 60);
-			}
-			state2 = true;
-		}
-		else {
-			state2 = false;
-		}
-
-		if (glfwGetKey(m_window, GLFW_KEY_J) == GLFW_PRESS) {
-			if (state3 == false) {
-				std::cout << "smaller" << std::endl;
-				setBorderlessFullscreen();
-			}
-			state3 = true;
-		}
-		else {
-			state3 = false;
-		}
-
-
 		glfwSwapBuffers(m_window);
 	}
 

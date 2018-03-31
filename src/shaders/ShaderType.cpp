@@ -1,9 +1,8 @@
-#include "ShaderType.h"
-
 #include <GL/glew.h>
-
 #include <exception>
 #include <string>
+
+#include "ShaderType.h"
 
 namespace {
 	auto constexpr VERTEX_SHADER_VAL   = GL_VERTEX_SHADER;

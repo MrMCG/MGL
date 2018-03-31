@@ -1,9 +1,7 @@
-#include "Shader.h"
-
 #include <GL/glew.h>
-
 #include <iostream>
 
+#include "Shader.h"
 #include "Logger.h"
 
 namespace {
@@ -29,11 +27,6 @@ namespace {
 		"   FragColor = vec4(colour.x, colour.y, colour.z, 1.0f);\n"
 		"}\n";
 
-#ifdef _DEBUG
-	auto constexpr ENABLE_DEBUG{ true };
-#else
-	auto constexpr ENABLE_DEBUG{ false };
-#endif
 }
 
 namespace MGL {

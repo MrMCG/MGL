@@ -25,6 +25,12 @@
     <Filter Include="Source Files\shaders">
       <UniqueIdentifier>{9b2d730e-c737-4ad5-88d8-8ee470a55ed5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\input">
+      <UniqueIdentifier>{2d4f1feb-ea5b-4d99-a691-8eabd0ef89e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{dc4fb99d-2762-4a6d-ae8f-ee44d133706f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -63,6 +69,9 @@
     <ClCompile Include="..\src\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\input\Input.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\shaders\ShaderType.h">
@@ -100,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="..\src\Logger.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\input\Input.h">
+      <Filter>Header Files\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

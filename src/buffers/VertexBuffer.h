@@ -1,8 +1,8 @@
 #pragma once
 
-#include "VboBuffer.h"
-
 #include <vector>
+
+#include "VboBuffer.h"
 
 namespace MGL {
 

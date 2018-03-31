@@ -87,7 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -101,7 +101,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -121,7 +121,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -139,7 +139,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -154,6 +154,7 @@
     <ClCompile Include="..\src\buffers\VaoBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VboBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VertexBuffer.cpp" />
+    <ClCompile Include="..\src\input\Input.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Renderer.cpp" />
     <ClCompile Include="..\src\GameObject.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="..\src\buffers\VaoBuffer.h" />
     <ClInclude Include="..\src\buffers\VboBuffer.h" />
     <ClInclude Include="..\src\buffers\VertexBuffer.h" />
+    <ClInclude Include="..\src\input\Input.h" />
     <ClInclude Include="..\src\Logger.h" />
     <ClInclude Include="..\src\Renderer.h" />
     <ClInclude Include="..\src\GameObject.h" />

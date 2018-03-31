@@ -1,5 +1,6 @@
-#include "ColourBuffer.h"
 #include <GL/glew.h>
+
+#include "ColourBuffer.h"
 
 namespace MGL {
 
@@ -25,7 +26,5 @@ namespace MGL {
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		m_mglVao.unbind();
 	}
-
-
 
 } // MGL
