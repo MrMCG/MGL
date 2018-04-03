@@ -22,9 +22,10 @@ namespace {
 		"#version 330 core\n"
 		"in vec3 colour;\n"
 		"out vec4 FragColor;\n"
+		"uniform float col;\n"
 		"void main()\n"
 		"{\n"
-		"   FragColor = vec4(colour.x, colour.y, colour.z, 1.0f);\n"
+		"   FragColor = vec4(colour.x, colour.y, col, 1.0f);\n"
 		"}\n";
 
 }

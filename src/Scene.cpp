@@ -1,4 +1,5 @@
 #include <GL/glew.h>
+#include <GLFW\glfw3.h>
 
 #include "Scene.h"
 #include "Shader.h"
@@ -8,6 +9,9 @@
 #include "ColourBuffer.h"
 #include "Logger.h"
 #include "Input.h"
+
+#include <cmath>
+#include <chrono>
 
 namespace MGL {
 
@@ -39,13 +43,16 @@ namespace MGL {
 
 		m_vertex->bufferData();
 		m_colour->bufferData();
-
 	}
 
 	void Scene::update() {
 		if (m_input->isPressed('S')) {
 			LOGI("hello from scene!");
 		}
+
+		auto val = (std::sin(glfwGetTime()) + 1) / 2.0f;
+		LOGD("val: " << val);
+		m_program->setUniform( "col", val);
 	}
 
 	void Scene::draw() {
