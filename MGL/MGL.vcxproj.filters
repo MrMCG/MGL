@@ -31,6 +31,12 @@
     <Filter Include="Source Files\input">
       <UniqueIdentifier>{dc4fb99d-2762-4a6d-ae8f-ee44d133706f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\system">
+      <UniqueIdentifier>{76ed6f02-564d-4a03-b874-c1bc160d7413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\system">
+      <UniqueIdentifier>{6c985d98-d7c9-4c46-a4f5-9658609f101c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -63,14 +69,14 @@
     <ClCompile Include="..\src\buffers\ColourBuffer.cpp">
       <Filter>Source Files\buffers</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\input\Input.cpp">
       <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\system\Renderer.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\system\Window.cpp">
+      <Filter>Source Files\system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,17 +107,17 @@
     <ClInclude Include="..\src\buffers\ColourBuffer.h">
       <Filter>Header Files\buffers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Logger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\input\Input.h">
       <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\system\Logger.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\system\Renderer.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\system\Window.h">
+      <Filter>Header Files\system</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

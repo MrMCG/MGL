@@ -156,13 +156,13 @@
     <ClCompile Include="..\src\buffers\VertexBuffer.cpp" />
     <ClCompile Include="..\src\input\Input.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Renderer.cpp" />
     <ClCompile Include="..\src\GameObject.cpp" />
     <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="..\src\shaders\Shader.cpp" />
     <ClCompile Include="..\src\shaders\ShaderProgram.cpp" />
     <ClCompile Include="..\src\shaders\ShaderType.cpp" />
-    <ClCompile Include="..\src\Window.cpp" />
+    <ClCompile Include="..\src\system\Renderer.cpp" />
+    <ClCompile Include="..\src\system\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\buffers\ColourBuffer.h" />
@@ -170,14 +170,14 @@
     <ClInclude Include="..\src\buffers\VboBuffer.h" />
     <ClInclude Include="..\src\buffers\VertexBuffer.h" />
     <ClInclude Include="..\src\input\Input.h" />
-    <ClInclude Include="..\src\Logger.h" />
-    <ClInclude Include="..\src\Renderer.h" />
     <ClInclude Include="..\src\GameObject.h" />
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\shaders\Shader.h" />
     <ClInclude Include="..\src\shaders\ShaderProgram.h" />
     <ClInclude Include="..\src\shaders\ShaderType.h" />
-    <ClInclude Include="..\src\Window.h" />
+    <ClInclude Include="..\src\system\Logger.h" />
+    <ClInclude Include="..\src\system\Renderer.h" />
+    <ClInclude Include="..\src\system\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
