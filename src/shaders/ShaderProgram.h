@@ -2,9 +2,9 @@
 
 #include <string>
 
-#include "Shader.h"
-
 namespace MGL {
+
+	class Shader;
 
 	class ShaderProgram {
 	public:

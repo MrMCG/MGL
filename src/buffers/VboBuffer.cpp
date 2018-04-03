@@ -1,15 +1,23 @@
-#include <GL/glew.h>
+#include <GL\glew.h>
 
 #include "VboBuffer.h"
 
 namespace MGL {
 
-	VboBuffer::VboBuffer(VaoBuffer const& mglVao) : m_mglVao(mglVao) {
+	VboBuffer::VboBuffer() {
 		glGenBuffers(1, &m_vbo);
 	}
 
 	VboBuffer::~VboBuffer() {
 		glDeleteBuffers(1, &m_vbo);
+	}
+
+	void VboBuffer::bind() const {
+		glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
+	}
+
+	void VboBuffer::unbind() {
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
 } // MGL

@@ -5,8 +5,6 @@
 namespace MGL {
 
 	class VaoBuffer;
-	class VertexBuffer;
-	class ColourBuffer;
 	class ShaderProgram;
 	class Input;
 
@@ -25,8 +23,6 @@ namespace MGL {
 	private:
 		ShaderProgram * m_program;
 		VaoBuffer* m_vao;
-		VertexBuffer* m_vertex;
-		ColourBuffer* m_colour;
 
 		std::shared_ptr<Input> m_input;
 	};

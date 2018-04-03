@@ -1,20 +1,20 @@
 #pragma once
 
-#include "VaoBuffer.h"
-
 namespace MGL {
 
 	class VboBuffer {
 	public:
-
-		VboBuffer(VaoBuffer const& mglVao);
+		VboBuffer();
 		virtual ~VboBuffer();
-
-		virtual void bufferData() const = 0;
+		virtual void bufferData(int const location) const = 0;
 
 	protected:
+		void bind() const;
+		static void unbind();
+
+	private:
 		unsigned int m_vbo = 0;
-		VaoBuffer m_mglVao;
+	
 	};
 
 } // MGL

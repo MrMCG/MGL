@@ -5,8 +5,7 @@
 #include "Shader.h"
 #include "ShaderProgram.h"
 #include "VaoBuffer.h"
-#include "VertexBuffer.h"
-#include "ColourBuffer.h"
+#include "VboBufferVec3.h"
 #include "Logger.h"
 #include "Input.h"
 #include "FileSystem.h"
@@ -21,7 +20,8 @@ namespace MGL {
 	}
 
 	Scene::~Scene() {
-
+		delete m_program;
+		delete m_vao;
 	}
 
 	void Scene::setInput(std::shared_ptr<Input> input) {
@@ -39,12 +39,25 @@ namespace MGL {
 		m_program->attach(fragment);
 		m_program->link();
 
-		m_vao = new VaoBuffer();
-		m_vertex = new VertexBuffer{ *m_vao };
-		m_colour = new ColourBuffer{ *m_vao };
+		auto m_colours = std::vector<float>{
+			0.7f, 0.2f, 0.2f,
+			0.2f, 0.7f, 0.2f,
+			0.2f, 0.2f, 0.7f,
+			0.2f, 0.2f, 0.2f
+		};
 
-		m_vertex->bufferData();
-		m_colour->bufferData();
+		auto m_vertices = std::vector<float>{
+			-0.5f,  0.5f, 0.0f,  // top left 
+			0.5f,  0.5f, 0.0f,  // top right
+			-0.5f, -0.5f, 0.0f,  // bottom left
+			0.5f, -0.5f, 0.0f   // bottom right	
+		};
+
+		m_vao = new VaoBuffer();
+		m_vao->addBuffer(0, std::make_unique<VboBufferVec3>(m_vertices));
+		m_vao->addBuffer(1, std::make_unique<VboBufferVec3>(m_colours));
+
+		m_vao->bufferAll();
 	}
 
 	void Scene::update() {

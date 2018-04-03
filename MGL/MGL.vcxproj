@@ -150,10 +150,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\buffers\ColourBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VaoBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VboBuffer.cpp" />
-    <ClCompile Include="..\src\buffers\VertexBuffer.cpp" />
+    <ClCompile Include="..\src\buffers\VboBufferVec3.cpp" />
     <ClCompile Include="..\src\input\Input.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\GameObject.cpp" />
@@ -166,10 +165,9 @@
     <ClCompile Include="..\src\system\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\buffers\ColourBuffer.h" />
     <ClInclude Include="..\src\buffers\VaoBuffer.h" />
     <ClInclude Include="..\src\buffers\VboBuffer.h" />
-    <ClInclude Include="..\src\buffers\VertexBuffer.h" />
+    <ClInclude Include="..\src\buffers\VboBufferVec3.h" />
     <ClInclude Include="..\src\input\Input.h" />
     <ClInclude Include="..\src\GameObject.h" />
     <ClInclude Include="..\src\Scene.h" />

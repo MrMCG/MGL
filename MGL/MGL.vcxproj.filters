@@ -63,12 +63,6 @@
     <ClCompile Include="..\src\buffers\VboBuffer.cpp">
       <Filter>Source Files\buffers</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\buffers\VertexBuffer.cpp">
-      <Filter>Source Files\buffers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\buffers\ColourBuffer.cpp">
-      <Filter>Source Files\buffers</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\input\Input.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
@@ -80,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="..\src\system\FileSystem.cpp">
       <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\buffers\VboBufferVec3.cpp">
+      <Filter>Source Files\buffers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,12 +101,6 @@
     <ClInclude Include="..\src\buffers\VboBuffer.h">
       <Filter>Header Files\buffers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\buffers\VertexBuffer.h">
-      <Filter>Header Files\buffers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\buffers\ColourBuffer.h">
-      <Filter>Header Files\buffers</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\input\Input.h">
       <Filter>Header Files\input</Filter>
     </ClInclude>
@@ -124,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="..\src\system\FileSystem.h">
       <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\buffers\VboBufferVec3.h">
+      <Filter>Header Files\buffers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
