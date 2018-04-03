@@ -78,6 +78,9 @@
     <ClCompile Include="..\src\system\Window.cpp">
       <Filter>Source Files\system</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\system\FileSystem.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\shaders\ShaderType.h">
@@ -117,6 +120,9 @@
       <Filter>Header Files\system</Filter>
     </ClInclude>
     <ClInclude Include="..\src\system\Window.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\system\FileSystem.h">
       <Filter>Header Files\system</Filter>
     </ClInclude>
   </ItemGroup>

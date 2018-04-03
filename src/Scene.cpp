@@ -9,6 +9,7 @@
 #include "ColourBuffer.h"
 #include "Logger.h"
 #include "Input.h"
+#include "FileSystem.h"
 
 #include <cmath>
 #include <chrono>
@@ -28,8 +29,9 @@ namespace MGL {
 	}
 
 	void Scene::load() {
-		Shader vert(ShaderType::Vertex);
-		Shader fragment(ShaderType::Fragment);
+
+		Shader vert(GetFileAsString("vertShader.txt"), ShaderType::Vertex );
+		Shader fragment(GetFileAsString("fragShader.txt"), ShaderType::Fragment);
 
 		m_program = new ShaderProgram();
 
@@ -50,8 +52,7 @@ namespace MGL {
 			LOGI("hello from scene!");
 		}
 
-		auto val = (std::sin(glfwGetTime()) + 1) / 2.0f;
-		LOGD("val: " << val);
+		float val = (std::sin(glfwGetTime()) + 1) / 2.0f;
 		m_program->setUniform( "col", val);
 	}
 

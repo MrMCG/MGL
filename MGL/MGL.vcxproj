@@ -87,7 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;C:\Users\Goose\source\repos\MGL\src\system;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -101,7 +101,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;C:\Users\Goose\source\repos\MGL\src\system;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -121,7 +121,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;C:\Users\Goose\source\repos\MGL\src\system;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -139,7 +139,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Goose\source\repos\MGL\external\glew-2.1.0\include;C:\Users\Goose\source\repos\MGL\external\glfw\include;C:\Users\Goose\source\repos\MGL\src\buffers;C:\Users\Goose\source\repos\MGL\src\shaders;C:\Users\Goose\source\repos\MGL\src;C:\Users\Goose\source\repos\MGL\src\input;C:\Users\Goose\source\repos\MGL\src\system;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -161,6 +161,7 @@
     <ClCompile Include="..\src\shaders\Shader.cpp" />
     <ClCompile Include="..\src\shaders\ShaderProgram.cpp" />
     <ClCompile Include="..\src\shaders\ShaderType.cpp" />
+    <ClCompile Include="..\src\system\FileSystem.cpp" />
     <ClCompile Include="..\src\system\Renderer.cpp" />
     <ClCompile Include="..\src\system\Window.cpp" />
   </ItemGroup>
@@ -175,6 +176,7 @@
     <ClInclude Include="..\src\shaders\Shader.h" />
     <ClInclude Include="..\src\shaders\ShaderProgram.h" />
     <ClInclude Include="..\src\shaders\ShaderType.h" />
+    <ClInclude Include="..\src\system\FileSystem.h" />
     <ClInclude Include="..\src\system\Logger.h" />
     <ClInclude Include="..\src\system\Renderer.h" />
     <ClInclude Include="..\src\system\Window.h" />
