@@ -13,7 +13,7 @@ int main(char*, char**) {
 		renderer = std::make_unique<MGL::Renderer>(std::make_unique<MGL::Window>());
 	}
 	catch (std::exception const& e) {
-		std::cerr << "Failed to init window manager! : " << e.what() << std::endl;
+		std::cerr << "Failed to init renderer! : " << e.what() << std::endl;
 		return -1;
 	}
 

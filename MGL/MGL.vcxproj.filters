@@ -43,6 +43,12 @@
     <Filter Include="Header Files\mesh">
       <UniqueIdentifier>{d6022037-355c-47a0-946e-f91dc7d5f89d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{56059e86-c336-482e-9649-d2f0352b8630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine">
+      <UniqueIdentifier>{5b0507f3-0d4c-4bcc-a530-604ed087be95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -50,9 +56,6 @@
     </ClCompile>
     <ClCompile Include="..\src\shaders\ShaderType.cpp">
       <Filter>Source Files\shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Scene.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\shaders\ShaderProgram.cpp">
       <Filter>Source Files\shaders</Filter>
@@ -87,16 +90,19 @@
     <ClCompile Include="..\src\mesh\Mesh.cpp">
       <Filter>Source Files\mesh</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\GraphicsObject.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\src\buffers\Vb0BufferVec2.cpp">
+      <Filter>Source Files\buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\GraphicsObject.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\Scene.cpp">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\shaders\ShaderType.h">
       <Filter>Header Files\shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Scene.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\shaders\ShaderProgram.h">
       <Filter>Header Files\shaders</Filter>
@@ -128,17 +134,23 @@
     <ClInclude Include="..\src\buffers\VboBufferVec3.h">
       <Filter>Header Files\buffers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\buffers\VboBufferVec4.h">
       <Filter>Header Files\buffers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\mesh\Mesh.h">
       <Filter>Header Files\mesh</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\GraphicsObject.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\buffers\VboBufferVec2.h">
+      <Filter>Header Files\buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\GraphicsObject.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Scene.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Types.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -87,7 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\src\buffers;..\src\shaders;..\src;..\src\input;..\src\system;..\src\mesh;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\external\glm;..\src;..\src\buffers;..\src\shaders;..\src\input;..\src\system;..\src\mesh;..\src\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -101,7 +101,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\src\buffers;..\src\shaders;..\src;..\src\input;..\src\system;..\src\mesh;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\external\glm;..\src;..\src\buffers;..\src\shaders;..\src\input;..\src\system;..\src\mesh;..\src\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -121,7 +121,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\src\buffers;..\src\shaders;..\src;..\src\input;..\src\system;..\src\mesh;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\external\glm;..\src;..\src\buffers;..\src\shaders;..\src\input;..\src\system;..\src\mesh;..\src\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -139,7 +139,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\src\buffers;..\src\shaders;..\src;..\src\input;..\src\system;..\src\mesh;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\external\glew-2.1.0\include;..\external\glfw\include;..\external\glm;..\src;..\src\buffers;..\src\shaders;..\src\input;..\src\system;..\src\mesh;..\src\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -151,14 +151,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\buffers\VaoBuffer.cpp" />
+    <ClCompile Include="..\src\buffers\Vb0BufferVec2.cpp" />
     <ClCompile Include="..\src\buffers\VboBuffer.cpp" />
     <ClCompile Include="..\src\buffers\VboBufferVec3.cpp" />
     <ClCompile Include="..\src\buffers\VboBufferVec4.cpp" />
+    <ClCompile Include="..\src\engine\GraphicsObject.cpp" />
+    <ClCompile Include="..\src\engine\Scene.cpp" />
     <ClCompile Include="..\src\input\Input.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\GraphicsObject.cpp" />
     <ClCompile Include="..\src\mesh\Mesh.cpp" />
-    <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="..\src\shaders\Shader.cpp" />
     <ClCompile Include="..\src\shaders\ShaderProgram.cpp" />
     <ClCompile Include="..\src\shaders\ShaderType.cpp" />
@@ -168,13 +169,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\buffers\VaoBuffer.h" />
+    <ClInclude Include="..\src\buffers\VboBufferVec2.h" />
     <ClInclude Include="..\src\buffers\VboBuffer.h" />
     <ClInclude Include="..\src\buffers\VboBufferVec3.h" />
     <ClInclude Include="..\src\buffers\VboBufferVec4.h" />
+    <ClInclude Include="..\src\engine\GraphicsObject.h" />
+    <ClInclude Include="..\src\engine\Scene.h" />
+    <ClInclude Include="..\src\engine\Types.h" />
     <ClInclude Include="..\src\input\Input.h" />
-    <ClInclude Include="..\src\GraphicsObject.h" />
     <ClInclude Include="..\src\mesh\Mesh.h" />
-    <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\shaders\Shader.h" />
     <ClInclude Include="..\src\shaders\ShaderProgram.h" />
     <ClInclude Include="..\src\shaders\ShaderType.h" />
@@ -182,7 +185,6 @@
     <ClInclude Include="..\src\system\Logger.h" />
     <ClInclude Include="..\src\system\Renderer.h" />
     <ClInclude Include="..\src\system\Window.h" />
-    <ClInclude Include="..\src\Types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,7 +30,7 @@ namespace MGL {
 
 	void Mesh::draw() const{
 		m_vao.bind();
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		glDrawArrays(GL_TRIANGLES, 0, m_positions->size());
 	}
 
 
