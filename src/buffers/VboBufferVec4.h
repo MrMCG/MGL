@@ -7,13 +7,13 @@
 
 namespace MGL {
 
-	class VboBufferVec3 : public VboBuffer {
+	class VboBufferVec4 : public VboBuffer {
 	public:
-		VboBufferVec3(std::vector<Vec3> const& data);
+		VboBufferVec4(std::vector<Vec4> const& data);
 		void bufferData(int const location) const override;
 
 	private:
-		std::vector<Vec3> const& m_data;
+		std::vector<Vec4> const& m_data;
 	};
 
 } // MGL

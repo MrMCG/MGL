@@ -37,6 +37,12 @@
     <Filter Include="Header Files\system">
       <UniqueIdentifier>{6c985d98-d7c9-4c46-a4f5-9658609f101c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\mesh">
+      <UniqueIdentifier>{a2e69753-7c95-4123-b266-761d75c03b07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mesh">
+      <UniqueIdentifier>{d6022037-355c-47a0-946e-f91dc7d5f89d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -46,9 +52,6 @@
       <Filter>Source Files\shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\shaders\ShaderProgram.cpp">
@@ -78,15 +81,21 @@
     <ClCompile Include="..\src\buffers\VboBufferVec3.cpp">
       <Filter>Source Files\buffers</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\buffers\VboBufferVec4.cpp">
+      <Filter>Source Files\buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mesh\Mesh.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GraphicsObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\shaders\ShaderType.h">
       <Filter>Header Files\shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\shaders\ShaderProgram.h">
@@ -118,6 +127,18 @@
     </ClInclude>
     <ClInclude Include="..\src\buffers\VboBufferVec3.h">
       <Filter>Header Files\buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\buffers\VboBufferVec4.h">
+      <Filter>Header Files\buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\mesh\Mesh.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GraphicsObject.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

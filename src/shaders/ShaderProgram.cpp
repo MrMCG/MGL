@@ -18,7 +18,12 @@ namespace MGL {
 		LOGD("Creating program : " << m_program);
 	}
 
-	void ShaderProgram::link() const {
+	void ShaderProgram::link() {
+		if (m_isLinked) {
+			LOGE("ShaderProgram (" << m_program << ") is already linked");
+			return;
+		}
+
 		LOGD("Linking program : " << m_program);
 		glLinkProgram(m_program);
 
@@ -33,10 +38,16 @@ namespace MGL {
 			return;
 		}
 
+		m_isLinked = true;
 		LOGD("Link succes : " << m_program);
+		 
 	}
 
 	void ShaderProgram::attach(Shader const& mglShader) const {
+		if (m_isLinked) {
+			LOGE("Cant attach Shaders to linked ShaderProgram (" << m_program << ")");
+			return;
+		}
 		LOGD("Attaching shader : " << mglShader.getShaderVal() << " to program : " << m_program);
 		glAttachShader(m_program, mglShader.getShaderVal());
 	}

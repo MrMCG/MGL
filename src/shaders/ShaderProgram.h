@@ -11,7 +11,7 @@ namespace MGL {
 		ShaderProgram();
 
 		void attach(Shader const& mglShader) const;
-		void link() const;
+		void link();
 		void use() const;
 
 		void setUniform(std::string name, float val) const;
@@ -19,6 +19,7 @@ namespace MGL {
 
 	private:
 		int m_program = -1;
+		bool m_isLinked = false;
 
 		int getUniformLocation(std::string name) const;
 	};

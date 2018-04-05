@@ -11,8 +11,8 @@ namespace {
 	auto constexpr DEFAULT_VERTEX_SHADER_SRC =
 		"#version 330 core\n"
 		"layout (location = 0) in vec3 pos;\n"
-		"layout (location = 1) in vec3 col;\n"
-		"out vec3 colour;\n"
+		"layout (location = 1) in vec4 col;\n"
+		"out vec4 colour;\n"
 		"void main()\n"
 		"{\n"
 		"   gl_Position = vec4(pos.x, pos.y, pos.z, 1.0);\n"
@@ -20,12 +20,12 @@ namespace {
 		"}";
 	auto constexpr DEFAULT_FRAGMENT_SHADER_SRC =
 		"#version 330 core\n"
-		"in vec3 colour;\n"
-		"out vec4 FragColor;\n"
+		"in vec4 colour;\n"
+		"out vec4 FragColour;\n"
 		"uniform float col;\n"
 		"void main()\n"
 		"{\n"
-		"   FragColor = vec4(colour.x, colour.y, col, 1.0f);\n"
+		"   FragColour = colour;\n"
 		"}\n";
 
 }

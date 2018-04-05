@@ -12,7 +12,7 @@ namespace MGL {
 		VaoBuffer();
 		~VaoBuffer();
 
-		void addBuffer(int location, std::unique_ptr<VboBuffer> buffer);
+		void setBuffer(int location, std::unique_ptr<VboBuffer> buffer);
 		void bufferAll() const;
 
 		void bind() const;

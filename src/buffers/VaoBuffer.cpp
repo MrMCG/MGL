@@ -21,9 +21,9 @@ namespace MGL {
 		glBindVertexArray(0);
 	}
 
-	void VaoBuffer::addBuffer(int location, std::unique_ptr<VboBuffer> buffer) {
+	void VaoBuffer::setBuffer(int location, std::unique_ptr<VboBuffer> buffer) {
 		if (m_buffers.find(location) != m_buffers.end()) {
-			LOGE("overriding buffer at location (" << location << ") which already exists!");
+			LOGD("overriding buffer at location (" << location << ") which already exists!");
 		}
 
 		m_buffers.emplace(location, std::move(buffer));
@@ -34,6 +34,7 @@ namespace MGL {
 		for (auto const& buffer : m_buffers) {
 			buffer.second->bufferData(buffer.first);
 		}
+		// unbind needed ??
 	}
 
 } // MGL

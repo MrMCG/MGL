@@ -4,14 +4,13 @@
 #include "Scene.h"
 #include "Shader.h"
 #include "ShaderProgram.h"
-#include "VaoBuffer.h"
-#include "VboBufferVec3.h"
 #include "Logger.h"
 #include "Input.h"
 #include "FileSystem.h"
+#include "Mesh.h"
+#include "GraphicsObject.h"
 
 #include <cmath>
-#include <chrono>
 
 namespace MGL {
 
@@ -21,7 +20,7 @@ namespace MGL {
 
 	Scene::~Scene() {
 		delete m_program;
-		delete m_vao;
+		delete m_square;
 	}
 
 	void Scene::setInput(std::shared_ptr<Input> input) {
@@ -30,34 +29,45 @@ namespace MGL {
 
 	void Scene::load() {
 
+		// load shaders from file
 		Shader vert(GetFileAsString("vertShader.txt"), ShaderType::Vertex );
 		Shader fragment(GetFileAsString("fragShader.txt"), ShaderType::Fragment);
 
+		// set vertex colours
+		auto cols = std::vector<Vec4>{
+			{ 0.7f, 0.2f, 0.2f, 1.0f },
+		{ 0.2f, 0.7f, 0.2f, 1.0f },
+		{ 0.2f, 0.2f, 0.7f, 1.0f },
+		{ 0.2f, 0.2f, 0.2f, 1.0f }
+		};
+
+		// set vertex positions
+		auto verts = std::vector<Vec3>{
+			{ -0.5f,  0.5f, 0.0f },  // top left 
+		{ 0.5f,  0.5f, 0.0f },  // top right
+		{ -0.5f, -0.5f, 0.0f },  // bottom left
+		{ 0.5f, -0.5f, 0.0f }   // bottom right	
+		};
+
+		auto colPtr = std::make_unique<std::vector<Vec4>>(cols);
+		auto vertPtr = std::make_unique<std::vector<Vec3>>(verts);
+
+		// create new shader program
 		m_program = new ShaderProgram();
 
+		// attach shaders
 		m_program->attach(vert);
 		m_program->attach(fragment);
-		m_program->link();
+	
+		// setup mesh
+		auto mesh = std::make_unique<Mesh>(std::move(vertPtr));
+		mesh->setColours(std::move(colPtr));
 
-		auto m_colours = std::vector<float>{
-			0.7f, 0.2f, 0.2f,
-			0.2f, 0.7f, 0.2f,
-			0.2f, 0.2f, 0.7f,
-			0.2f, 0.2f, 0.2f
-		};
+		// create graphics object
+		m_square = new GraphicsObject(std::move(mesh), *m_program);
 
-		auto m_vertices = std::vector<float>{
-			-0.5f,  0.5f, 0.0f,  // top left 
-			0.5f,  0.5f, 0.0f,  // top right
-			-0.5f, -0.5f, 0.0f,  // bottom left
-			0.5f, -0.5f, 0.0f   // bottom right	
-		};
-
-		m_vao = new VaoBuffer();
-		m_vao->addBuffer(0, std::make_unique<VboBufferVec3>(m_vertices));
-		m_vao->addBuffer(1, std::make_unique<VboBufferVec3>(m_colours));
-
-		m_vao->bufferAll();
+		// 'build' (setup opengl)
+		m_square->build();
 	}
 
 	void Scene::update() {
@@ -70,9 +80,7 @@ namespace MGL {
 	}
 
 	void Scene::draw() {
-		m_program->use();
-		m_vao->bind();
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		m_square->draw();
 	}
 
 }

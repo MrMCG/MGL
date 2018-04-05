@@ -4,8 +4,8 @@
 
 namespace MGL {
 
-	class VaoBuffer;
 	class ShaderProgram;
+	class GraphicsObject;
 	class Input;
 
 	class Scene {
@@ -22,7 +22,7 @@ namespace MGL {
 
 	private:
 		ShaderProgram * m_program;
-		VaoBuffer* m_vao;
+		GraphicsObject* m_square;
 
 		std::shared_ptr<Input> m_input;
 	};
