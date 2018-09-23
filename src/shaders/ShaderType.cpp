@@ -1,8 +1,9 @@
 #include <GL/glew.h>
-#include <exception>
+#include <stdexcept>
 #include <string>
+#include <iostream>
 
-#include "ShaderType.h"
+#include "ShaderType.hpp"
 
 namespace {
 	auto constexpr VERTEX_SHADER_VAL   = GL_VERTEX_SHADER;
@@ -23,7 +24,7 @@ namespace MGL {
 			return FRAGMENT_SHADER_VAL;
 			break;
 		default:
-			throw std::exception("Invalid ShaderType given!");
+			throw std::runtime_error("Invalid ShaderType given!");
 			break;
 		}
 	}

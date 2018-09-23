@@ -1,6 +1,6 @@
-#include <GL\glew.h>
+#include <GL/glew.h>
 
-#include "VboBufferVec2.h"
+#include "VboBufferVec2.hpp"
 
 namespace MGL {
 

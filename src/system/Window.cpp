@@ -2,9 +2,9 @@
 #include <exception>
 #include <iostream>
 
-#include "Window.h"
-#include "Logger.h"
-#include "Input.h"
+#include "Window.hpp"
+#include "Logger.hpp"
+#include "Input.hpp"
 
 namespace {
 	auto constexpr MAJOR_VERSION = 4;
@@ -18,7 +18,7 @@ namespace {
 
 	auto constexpr DEFAULT_WIN_TITLE = "Default Window";
 
-#ifdef _DEBUG
+#ifdef MGL_DEBUG
 	auto constexpr ENABLE_DEBUG{ true };
 #else
 	auto constexpr ENABLE_DEBUG{ false };
@@ -42,7 +42,7 @@ namespace MGL {
 			throw std::runtime_error("Failed to init GLFW!");
 		}
 
-		setWindowHints();
+		//setWindowHints();
 
 		LOGI("creating window: " << width << "x" << height << " " << winTitle);
 		m_window = glfwCreateWindow(800, 600, winTitle.c_str(), nullptr, nullptr);

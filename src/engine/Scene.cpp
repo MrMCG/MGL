@@ -1,14 +1,14 @@
 #include <GL/glew.h>
-#include <GLFW\glfw3.h>
+#include <GLFW/glfw3.h>
 
-#include "Scene.h"
-#include "Shader.h"
-#include "ShaderProgram.h"
-#include "Logger.h"
-#include "Input.h"
-#include "FileSystem.h"
-#include "Mesh.h"
-#include "GraphicsObject.h"
+#include "Scene.hpp"
+#include "Shader.hpp"
+#include "ShaderProgram.hpp"
+#include "Logger.hpp"
+#include "Input.hpp"
+#include "FileSystem.hpp"
+#include "Mesh.hpp"
+#include "GraphicsObject.hpp"
 
 #include <cmath>
 

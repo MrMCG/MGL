@@ -1,4 +1,4 @@
-#include "GraphicsObject.h"
+#include "GraphicsObject.hpp"
 
 namespace MGL {
 	

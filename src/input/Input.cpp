@@ -1,7 +1,7 @@
-#include <GLFW\glfw3.h>
+#include <GLFW/glfw3.h>
 
-#include "Input.h"
-#include "Logger.h"
+#include "Input.hpp"
+#include "Logger.hpp"
 
 namespace MGL {
 

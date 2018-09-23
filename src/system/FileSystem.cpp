@@ -1,8 +1,8 @@
 #include <fstream>
 #include <sstream>
 
-#include "FileSystem.h"
-#include "Logger.h"
+#include "FileSystem.hpp"
+#include "Logger.hpp"
 
 namespace MGL {
 

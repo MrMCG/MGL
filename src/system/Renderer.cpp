@@ -3,13 +3,13 @@
 #include <exception>
 #include <iostream>
 
-#include "Renderer.h"
-#include "Scene.h"
-#include "Logger.h"
+#include "Renderer.hpp"
+#include "Scene.hpp"
+#include "Logger.hpp"
 
 namespace {
 
-#ifdef _DEBUG
+#ifdef MGL_DEBUG
 	auto constexpr ENABLE_DEBUG{ true };
 #else
 	auto constexpr ENABLE_DEBUG{ false };

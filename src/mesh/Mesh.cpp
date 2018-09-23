@@ -1,9 +1,9 @@
-#include <GL\glew.h>
+#include <GL/glew.h>
 #include <memory>
 
-#include "Mesh.h"
-#include "VboBufferVec3.h"
-#include "VboBufferVec4.h"
+#include "Mesh.hpp"
+#include "VboBufferVec3.hpp"
+#include "VboBufferVec4.hpp"
 
 namespace {
 	enum BufferPositions {

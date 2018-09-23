@@ -1,9 +1,9 @@
 #include <GL/glew.h>
 #include <iostream>
 
-#include "ShaderProgram.h"
-#include "Logger.h"
-#include "Shader.h"
+#include "ShaderProgram.hpp"
+#include "Logger.hpp"
+#include "Shader.hpp"
 
 namespace {
 

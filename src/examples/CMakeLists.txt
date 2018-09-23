@@ -1,0 +1,10 @@
+CMAKE_MINIMUM_REQUIRED( VERSION 3.11 )
+PROJECT( simple_triangle )
+
+ADD_EXECUTABLE( simple_triangle main.cpp )
+TARGET_LINK_LIBRARIES( simple_triangle MGL )
+
+CONFIGURE_FILE( fragShader.txt ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/fragShader.txt COPYONLY )
+CONFIGURE_FILE( vertShader.txt ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/vertShader.txt COPYONLY )
+
+

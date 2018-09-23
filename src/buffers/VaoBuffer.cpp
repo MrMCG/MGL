@@ -1,7 +1,7 @@
-#include <GL\glew.h>
+#include "GL/glew.h"
 
-#include "VaoBuffer.h"
-#include "Logger.h"
+#include "VaoBuffer.hpp"
+#include "Logger.hpp"
 
 namespace MGL {
 
